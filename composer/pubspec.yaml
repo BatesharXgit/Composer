@@ -41,6 +41,7 @@ dependencies:
   just_audio: ^0.9.37
   just_audio_cache: ^0.1.2
   rename: ^3.0.2
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:

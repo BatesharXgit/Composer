@@ -9,7 +9,7 @@ import 'package:just_audio_cache/just_audio_cache.dart';
 import '../../data/composer_data/focus_composer.dart';
 
 class FocusComposer extends StatefulWidget {
-  const FocusComposer({Key? key}) : super(key: key);
+  const FocusComposer({super.key});
 
   @override
   State<FocusComposer> createState() => FocusComposerState();
@@ -113,7 +113,7 @@ class FocusComposerState extends State<FocusComposer> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/composer.gif'),
                 fit: BoxFit.cover,
@@ -139,7 +139,7 @@ class FocusComposerState extends State<FocusComposer> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.4,
                       width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/composer.gif'),
                           fit: BoxFit.cover,
@@ -157,7 +157,7 @@ class FocusComposerState extends State<FocusComposer> {
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height * 0.075,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
@@ -165,7 +165,7 @@ class FocusComposerState extends State<FocusComposer> {
                           ),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           ),
@@ -177,7 +177,7 @@ class FocusComposerState extends State<FocusComposer> {
                                   MediaQuery.of(context).size.height * 0.075,
                               decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.4),
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(20),
                                   bottomRight: Radius.circular(20),
                                 ),
@@ -186,14 +186,14 @@ class FocusComposerState extends State<FocusComposer> {
                                     color: Colors.black.withOpacity(0.1),
                                     spreadRadius: 5,
                                     blurRadius: 7,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                               ),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
-                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  padding: const EdgeInsets.only(left: 20, right: 20),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -224,7 +224,7 @@ class FocusComposerState extends State<FocusComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('assets/style3.png'),
                       fit: BoxFit.cover,
                     ),
@@ -276,7 +276,7 @@ class FocusComposerState extends State<FocusComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -323,7 +323,7 @@ class FocusComposerState extends State<FocusComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -370,7 +370,7 @@ class FocusComposerState extends State<FocusComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -417,7 +417,7 @@ class FocusComposerState extends State<FocusComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -464,7 +464,7 @@ class FocusComposerState extends State<FocusComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -551,7 +551,7 @@ class FocusComposerState extends State<FocusComposer> {
       }
     }
     return Padding(
-      padding: EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.only(right: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -676,7 +676,7 @@ class FocusComposerState extends State<FocusComposer> {
       });
     }
 
-    print('Audio Player State: ${audioPlayer.playing ? 'Playing' : 'Paused'}');
+    // print('Audio Player State: ${audioPlayer.playing ? 'Playing' : 'Paused'}');
   }
 
   Future<void> _showTimerDialog() async {
@@ -695,7 +695,7 @@ class FocusComposerState extends State<FocusComposer> {
         ];
 
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFF131321),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
@@ -705,8 +705,8 @@ class FocusComposerState extends State<FocusComposer> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Select Timer Duration',
                   style: TextStyle(fontSize: 18, color: Colors.white),
@@ -722,12 +722,12 @@ class FocusComposerState extends State<FocusComposer> {
                             Navigator.of(context).pop(selectedTime);
                           },
                           tileColor: (selectedTime == option['duration'])
-                              ? Color(0xFF131321)
+                              ? const Color(0xFF131321)
                               : Colors.grey[800],
                           title: Center(
                             child: Text(
                               option['label'],
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ),

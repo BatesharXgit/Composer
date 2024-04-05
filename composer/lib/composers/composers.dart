@@ -5,6 +5,7 @@ import 'package:composer/composers/relaxing_composer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AuraComposers extends StatefulWidget {
   // final ScrollController controller;
@@ -13,14 +14,23 @@ class AuraComposers extends StatefulWidget {
   });
 
   @override
-  State<AuraComposers> createState() => _AuraComposersState();
+  State<AuraComposers> createState() => AuraComposersState();
 }
 
-class _AuraComposersState extends State<AuraComposers> {
+class AuraComposersState extends State<AuraComposers> {
   @override
   void initState() {
     super.initState();
     // loadNativeAd();
+  }
+
+  final Uri urlAuraLink =
+      Uri.parse('https://play.google.com/store/apps/details?id=com.xd.aura');
+
+  Future<void> launchurlAuraLink() async {
+    if (!await launchUrl(urlAuraLink)) {
+      throw Exception('Could not launch $urlAuraLink');
+    }
   }
 
   // @override
@@ -71,7 +81,7 @@ class _AuraComposersState extends State<AuraComposers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff131321),
+      backgroundColor: const Color(0xff131321),
       body: SingleChildScrollView(
         // controller: widget.controller,
         physics: const BouncingScrollPhysics(),
@@ -85,13 +95,13 @@ class _AuraComposersState extends State<AuraComposers> {
                 Container(
                   height: MediaQuery.of(context).size.height * 0.3,
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20),
                     ),
                   ),
-                  child: ClipRRect(
+                  child: const ClipRRect(
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20),
@@ -112,7 +122,7 @@ class _AuraComposersState extends State<AuraComposers> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.075,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20),
@@ -120,7 +130,7 @@ class _AuraComposersState extends State<AuraComposers> {
                       ),
                     ),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(20),
                         bottomRight: Radius.circular(20),
                       ),
@@ -131,7 +141,7 @@ class _AuraComposersState extends State<AuraComposers> {
                           height: MediaQuery.of(context).size.height * 0.075,
                           decoration: BoxDecoration(
                             color: Colors.black.withOpacity(0.4),
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20),
                             ),
@@ -140,14 +150,15 @@ class _AuraComposersState extends State<AuraComposers> {
                                 color: Colors.black.withOpacity(0.1),
                                 spreadRadius: 5,
                                 blurRadius: 7,
-                                offset: Offset(0, 3),
+                                offset: const Offset(0, 3),
                               ),
                             ],
                           ),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Padding(
-                              padding: EdgeInsets.only(left: 20, right: 20),
+                              padding:
+                                  const EdgeInsets.only(left: 20, right: 20),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -174,14 +185,14 @@ class _AuraComposersState extends State<AuraComposers> {
               height: 10,
             ),
             InkWell(
-              onTap: () => Get.to(RelaxingComposer()),
+              onTap: () => Get.to(const RelaxingComposer()),
               child: Stack(
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width - 40,
                     height: 200,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: CachedNetworkImageProvider(
                             'https://firebasestorage.googleapis.com/v0/b/aura-xd.appspot.com/o/Composers%2Frelaxingc.jpg?alt=media&token=7f93d245-4a6e-472e-b5c8-9a31d64bce98'),
                         fit: BoxFit.cover,
@@ -196,7 +207,7 @@ class _AuraComposersState extends State<AuraComposers> {
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.075,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(15),
@@ -204,7 +215,7 @@ class _AuraComposersState extends State<AuraComposers> {
                         ),
                       ),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15),
                         ),
@@ -216,7 +227,7 @@ class _AuraComposersState extends State<AuraComposers> {
                                   MediaQuery.of(context).size.height * 0.075,
                               decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.4),
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(15),
                                   bottomRight: Radius.circular(15),
                                 ),
@@ -225,14 +236,14 @@ class _AuraComposersState extends State<AuraComposers> {
                                     color: Colors.black.withOpacity(0.1),
                                     spreadRadius: 5,
                                     blurRadius: 7,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                               ),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
-                                  padding: EdgeInsets.only(left: 10),
+                                  padding: const EdgeInsets.only(left: 10),
                                   child: Text(
                                     'Relaxing Composer',
                                     style: GoogleFonts.kanit(
@@ -255,14 +266,14 @@ class _AuraComposersState extends State<AuraComposers> {
               height: 10,
             ),
             InkWell(
-              onTap: () => Get.to(FocusComposer()),
+              onTap: () => Get.to(const FocusComposer()),
               child: Stack(
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width - 40,
                     height: 200,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: CachedNetworkImageProvider(
                             'https://firebasestorage.googleapis.com/v0/b/aura-xd.appspot.com/o/Composers%2Ffocusc.jpg?alt=media&token=8a20a461-2314-4d3a-83cb-edfedffc3707'),
                         fit: BoxFit.cover,
@@ -277,7 +288,7 @@ class _AuraComposersState extends State<AuraComposers> {
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.075,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(15),
@@ -285,7 +296,7 @@ class _AuraComposersState extends State<AuraComposers> {
                         ),
                       ),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15),
                         ),
@@ -297,7 +308,7 @@ class _AuraComposersState extends State<AuraComposers> {
                                   MediaQuery.of(context).size.height * 0.075,
                               decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.4),
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(15),
                                   bottomRight: Radius.circular(15),
                                 ),
@@ -306,14 +317,14 @@ class _AuraComposersState extends State<AuraComposers> {
                                     color: Colors.black.withOpacity(0.1),
                                     spreadRadius: 5,
                                     blurRadius: 7,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                               ),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
-                                  padding: EdgeInsets.only(left: 10),
+                                  padding: const EdgeInsets.only(left: 10),
                                   child: Text(
                                     'Focus Composer',
                                     style: GoogleFonts.kanit(
@@ -328,18 +339,21 @@ class _AuraComposersState extends State<AuraComposers> {
                 ],
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
-                'Get Full App For Free',
-                style: GoogleFonts.kanit(
-                  fontSize: 28,
-                  color: Color(0xff131321),
+            GestureDetector(
+              onTap: launchurlAuraLink,
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  'Get Full App For Free',
+                  style: GoogleFonts.kanit(
+                    fontSize: 28,
+                    color: const Color(0xff131321),
+                  ),
                 ),
               ),
             ),

@@ -9,7 +9,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_cache/just_audio_cache.dart';
 
 class RelaxingComposer extends StatefulWidget {
-  const RelaxingComposer({Key? key}) : super(key: key);
+  const RelaxingComposer({super.key});
 
   @override
   State<RelaxingComposer> createState() => RelaxingComposerState();
@@ -113,7 +113,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: CachedNetworkImageProvider(
                     'https://firebasestorage.googleapis.com/v0/b/aura-xd.appspot.com/o/Composers%2Frelaxing.gif?alt=media&token=766d5a4b-f114-45c7-b7c0-2e0076c77386'),
@@ -140,13 +140,13 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.4,
                       width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20),
                         ),
                       ),
-                      child: ClipRRect(
+                      child: const ClipRRect(
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20),
@@ -167,7 +167,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                       child: Container(
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height * 0.075,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
@@ -175,7 +175,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                           ),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20),
                           ),
@@ -187,7 +187,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                                   MediaQuery.of(context).size.height * 0.075,
                               decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.4),
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(20),
                                   bottomRight: Radius.circular(20),
                                 ),
@@ -196,14 +196,14 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                                     color: Colors.black.withOpacity(0.1),
                                     spreadRadius: 5,
                                     blurRadius: 7,
-                                    offset: Offset(0, 3),
+                                    offset: const Offset(0, 3),
                                   ),
                                 ],
                               ),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
-                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  padding: const EdgeInsets.only(left: 20, right: 20),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -234,7 +234,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('assets/style3.png'),
                       fit: BoxFit.cover,
                     ),
@@ -286,7 +286,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -333,7 +333,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -380,7 +380,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -427,7 +427,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -474,7 +474,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                   width: MediaQuery.of(context).size.width - 40,
                   decoration: BoxDecoration(
                     // color: const Color(0xFF1F1F36),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/style3.png'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(15),
@@ -558,7 +558,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
       }
     }
     return Padding(
-      padding: EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.only(right: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -683,7 +683,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
       });
     }
 
-    print('Audio Player State: ${audioPlayer.playing ? 'Playing' : 'Paused'}');
+    // print('Audio Player State: ${audioPlayer.playing ? 'Playing' : 'Paused'}');
   }
 
   Future<void> _showTimerDialog() async {
@@ -702,7 +702,7 @@ class RelaxingComposerState extends State<RelaxingComposer> {
         ];
 
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFF131321),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),
@@ -712,8 +712,8 @@ class RelaxingComposerState extends State<RelaxingComposer> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Select Timer Duration',
                   style: TextStyle(fontSize: 18, color: Colors.white),
@@ -729,12 +729,12 @@ class RelaxingComposerState extends State<RelaxingComposer> {
                             Navigator.of(context).pop(selectedTime);
                           },
                           tileColor: (selectedTime == option['duration'])
-                              ? Color(0xFF131321)
+                              ? const Color(0xFF131321)
                               : Colors.grey[800],
                           title: Center(
                             child: Text(
                               option['label'],
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ),
                         ),
